@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     (function(index){
     // aggiungiamo un onclick ad ogni quadrato in griglia di gioco
-        squares[i].onclick = function(){           
+        squares[i].onclick = function() {           
              //se il quadrato sotto di me e' preso posso posizionare il mio gettone sopra quel quadrato(contenente l'altro gettone)
-                if(squares[index + 7].classList.contains('taken')){
+                if(squares[index + 7].classList.contains('taken')) {
                     if (currentPlayer === 1) {
                         squares[index].classList.add('taken')
                         squares[index].classList.add('player-one')
@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
         [8, 15, 22, 29], [9, 16, 23, 30], [10, 17, 24, 31], [11, 18, 25, 32], [12, 19, 26, 33], [13, 20, 27, 34]
         ];
         // prendi i valori di ogni array vincente e collegali ai riquadri
-        for(let y = 0; y < winningArrays.length; y++){
-            const square1 = squares[winningArrays[y][0]]
-            const square2 = squares[winningArrays[y][1]]
-            const square3 = squares[winningArrays[y][2]]
-            const square4 = squares[winningArrays[y][3]]
+        for(let y = 0; y < winningArrays.length; y++) {
+            const square1 = squares[winningArrays[y][0]];
+            const square2 = squares[winningArrays[y][1]];
+            const square3 = squares[winningArrays[y][2]];
+            const square4 = squares[winningArrays[y][3]];
 
         //funzione che controlla se gli arrays hanno tutti lo stesso player(player 1 o 2)
         if(square1.classList.contains('player-one') &&
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-        squares.forEach(square => addEventListener('click', checkBoard))
+        squares.forEach(square => square.addEventListener('click', checkBoard))
 
 
 
